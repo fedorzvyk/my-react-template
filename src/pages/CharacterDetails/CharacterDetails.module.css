@@ -1,0 +1,42 @@
+.character__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character__image {
+  border-radius: 50%;
+  width: 300px;
+  margin-bottom: 16px;
+}
+
+.character__name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #081f32;
+  margin-bottom: 48px;
+}
+
+.character__subtitle {
+  margin-bottom: 48px;
+}
+.character__list {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.character__item {
+  min-height: 100%;
+}
+
+.button {
+  margin-bottom: 32px;
+  background-color: transparent;
+  border: none;
+}
