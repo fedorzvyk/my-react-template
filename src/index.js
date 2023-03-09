@@ -12,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/r_m">
+    <BrowserRouter basename="/r_and_m">
       <App />
     </BrowserRouter>
   </React.StrictMode>

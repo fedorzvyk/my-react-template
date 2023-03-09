@@ -14,7 +14,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* <Filter></Filter> */}
       <CharactersList characters={characters} />
     </div>
   );
