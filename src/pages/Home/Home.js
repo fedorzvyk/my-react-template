@@ -1,7 +1,7 @@
 import { CharactersList } from 'components/CharactersList/CharactersList';
 import { getCharacters } from 'api/api';
 import { useState, useEffect } from 'react';
-import Filter from 'components/Filter/Filter';
+// import Filter from 'components/Filter/Filter';
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
