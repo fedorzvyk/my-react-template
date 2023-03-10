@@ -1,8 +1,18 @@
+.input__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 86px;
+}
+
+.input__image {
+  width: 600px;
+  margin-bottom: 16px;
+}
+
 .input {
   width: 100%;
-  max-width: 1020px;
 
-  margin-bottom: 61px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 8px;
 
@@ -12,6 +22,22 @@
   font-size: 16px;
   line-height: 150%;
   padding: 16px;
+  padding-left: 48px;
 
   color: rgba(0, 0, 0, 0.5);
+}
+
+.input__field {
+  position: relative;
+  margin-bottom: 61px;
+  max-width: 1020px;
+  width: 100%;
+}
+
+.input__icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  margin-right: -50%;
+  transform: translate(0, -50%);
 }

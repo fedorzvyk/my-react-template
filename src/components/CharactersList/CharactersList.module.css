@@ -1,7 +1,9 @@
 .characters__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 20px;
+  padding-bottom: 86px;
 }
 
 .characters__item {
@@ -23,10 +25,20 @@
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
     0px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
+  height: 100%;
+}
+
+.characters__image {
+  height: 168px;
+  width: 240;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
 }
 
 .character__info {
   padding: 12px 16px;
+  /* flex-grow: 1; */
+  /* height: 100%; */
 }
 
 .character__name {

@@ -8,7 +8,6 @@ const FAKE_PHOTO = 'https://screench.com/upload/no-poster.jpeg';
 
 export const CharactersList = ({ characters }) => {
   const location = useLocation();
-  console.log(characters);
 
   return (
     <ul className={css.characters__list}>
@@ -16,7 +15,11 @@ export const CharactersList = ({ characters }) => {
         <li key={id} className={css.characters__item}>
           <Link key={id} state={{ from: location }} to={`/${id}`}>
             <div className={css.characters__wrap}>
-              <img src={`${image ? image : FAKE_PHOTO}`} alt={name} />
+              <img
+                className={css.characters__image}
+                src={`${image ? image : FAKE_PHOTO}`}
+                alt={name}
+              />
               <div className={css.character__info}>
                 <h2 className={css.character__name}>{name}</h2>
                 <p className={css.character__specie}>{species}</p>

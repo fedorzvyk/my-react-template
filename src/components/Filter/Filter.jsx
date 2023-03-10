@@ -1,46 +1,23 @@
-// import css from './Filter.module.css';
-// import logo from '../../images/logo_desktop.png';
-// import { useState } from 'react';
-// import { useLocation, useSearchParams } from 'react-router-dom';
+import css from './Filter.module.css';
+import logo from '../../images/logo_desktop.png';
+import { ReactComponent as Search } from '../../images/search.svg';
 
-// const Filter = () => {
-//   const searchQuery = useSearchParams.get('search') ?? '';
+const Filter = ({ filter, onFilter }) => {
+  return (
+    <div className={css.input__wrapper}>
+      <img className={css.input__image} src={logo} alt=""></img>
+      <div className={css.input__field}>
+        <input
+          type="text"
+          className={css.input}
+          placeholder="Filter by name..."
+          value={filter}
+          onChange={onFilter}
+        />
+        <Search className={css.input__icon} />
+      </div>
+    </div>
+  );
+};
 
-//   const [search, setSearch] = useState(searchQuery);
-
-//   const handleSearch = event => {
-//     setSearch(event.target.value);
-//     // searchPosts(event.target.value);
-
-//     console.log(event.target.value);
-//   };
-
-//   return (
-//     <>
-//       <img src={logo} alt=""></img>
-//       <input
-//         type="text"
-//         // className="form-control mb-4"
-//         placeholder="Type to search..."
-//         value={search}
-//         onChange={handleSearch}
-//       />
-
-//       {/* <label>
-//         <input
-//           className={css.input}
-//           type="text"
-//           name="filter"
-//           placeholder="Filter by name..."
-//           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//           required
-//           // value={filter}
-//           onChange="{}"
-//         />
-//       </label> */}
-//     </>
-//   );
-// };
-
-// export default Filter;
+export default Filter;
