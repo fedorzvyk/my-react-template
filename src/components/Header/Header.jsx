@@ -5,11 +5,11 @@ export const Header = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('user')));
+    setUser(JSON.parse(localStorage.getItem('userR&M')));
   }, []);
 
   const logout = () => {
-    localStorage.clear();
+    localStorage.clear('userR&M');
     window.location.reload();
   };
   return (

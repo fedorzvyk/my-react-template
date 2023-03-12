@@ -15,13 +15,13 @@ export const LoginWithGoogle = () => {
     signInWithPopup(auth, googleAuthProvider)
       .then(credentials => {
         setUser(credentials.user);
-        localStorage.setItem('user', JSON.stringify(credentials.user));
+        localStorage.setItem('userR&M', JSON.stringify(credentials.user));
       })
       .catch(e => console.log(e));
   };
 
   useEffect(() => {
-    setUser(localStorage.getItem('user'));
+    setUser(localStorage.getItem('userR&M'));
   }, []);
 
   return (
