@@ -6,10 +6,10 @@ import { Header } from 'components/Header/Header';
 export const SharedLayout = () => {
   return (
     <>
-      <div className={css.container}>
-        <Header />
+      <Header />
+      <main className={css.container}>
         <Outlet />
-      </div>
+      </main>
       <ToastContainer autoClose={2000} />
     </>
   );

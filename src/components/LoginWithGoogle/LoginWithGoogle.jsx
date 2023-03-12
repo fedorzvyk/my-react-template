@@ -5,6 +5,7 @@ import scss from './LoginWithGoogle.module.scss';
 import { FcGoogle } from 'react-icons/fc';
 import App from '../App';
 import { Hero } from 'components/Hero/Hero';
+import animation from '../../images/rick-and-morty-breaking-bad.gif';
 
 export const LoginWithGoogle = () => {
   const auth = getAuth(app);
@@ -24,20 +25,25 @@ export const LoginWithGoogle = () => {
   }, []);
 
   return (
-    <main>
+    <>
       {user ? (
         <App />
       ) : (
         <div className={scss.container__auth}>
           <Hero />
           <h2 className={scss.auth__title}>
-            Please signin with Google to use this application
+            Use your Google Account to sign in!
           </h2>
           <button onClick={handleClick}>
             Signin with Google <FcGoogle size={25} />
           </button>
+          <img
+            className={scss.auth__animation}
+            src={animation}
+            alt="rick and morty"
+          ></img>
         </div>
       )}
-    </main>
+    </>
   );
 };

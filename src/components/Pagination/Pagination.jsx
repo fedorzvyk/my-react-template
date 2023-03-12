@@ -5,7 +5,7 @@ export const Pagination = ({ searcInfo, loadLess, loadMore, page }) => {
   return (
     <div className={scss.pagination__wrapper}>
       {searcInfo.prev && (
-        <button onClick={loadLess}>
+        <button onClick={loadLess} aria-label="prev">
           <GrPrevious />
         </button>
       )}
@@ -15,7 +15,7 @@ export const Pagination = ({ searcInfo, loadLess, loadMore, page }) => {
         </span>
       )}
       {searcInfo.next && (
-        <button onClick={loadMore}>
+        <button onClick={loadMore} aria-label="next">
           <GrNext />
         </button>
       )}

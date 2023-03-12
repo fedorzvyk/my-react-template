@@ -10,3 +10,9 @@
 .auth__title {
   text-align: center;
 }
+
+.auth__animation {
+  @media (max-width: 540px) {
+    width: 312px;
+  }
+}

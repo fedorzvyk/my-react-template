@@ -18,12 +18,12 @@
   border-radius: 8px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   padding: 16px;
   padding-left: 48px;
-  color: rgba(0, 0, 0, 0.5);
+  color: black;
 }
 
 .input__icon {

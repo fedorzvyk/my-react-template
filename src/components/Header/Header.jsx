@@ -13,9 +13,9 @@ export const Header = () => {
     window.location.reload();
   };
   return (
-    <div className={scss.header__wrapper}>
+    <header className={scss.header__wrapper}>
       <h2 className={scss.header__title}>Welcome, {user.displayName}</h2>
       <button onClick={logout}>Logout</button>
-    </div>
+    </header>
   );
 };

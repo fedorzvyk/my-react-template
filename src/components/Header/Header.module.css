@@ -7,8 +7,13 @@
   margin-left: auto;
   margin-right: auto;
   border-bottom: 1px solid;
+  background-image: url("../../images/background.webp");
+  background-size: cover;
+  background-position: 30% 70%;
 }
 
 .header__title {
   text-align: center;
+  color: rgb(26, 20, 142);
+  text-shadow: 2px 2px 1px rgb(255, 255, 255);
 }/*# sourceMappingURL=Header.module.css.map */
