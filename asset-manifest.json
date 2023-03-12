@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/r_and_m/static/css/main.d33a9b70.css",
-    "main.js": "/r_and_m/static/js/main.142008ef.js",
+    "main.css": "/r_and_m/static/css/main.3fbce675.css",
+    "main.js": "/r_and_m/static/js/main.dccd71d2.js",
+    "static/media/not_found.png": "/r_and_m/static/media/not_found.a218ca229093de6f08d2.png",
     "static/media/Roboto-Medium.ttf": "/r_and_m/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
+    "static/media/Roboto-Regular.ttf": "/r_and_m/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/r_and_m/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/logo_desktop.png": "/r_and_m/static/media/logo_desktop.1169ced27a00bfcad56d.png",
+    "static/media/Karla-Bold.ttf": "/r_and_m/static/media/Karla-Bold.623c61b6f8c6529800b2.ttf",
     "index.html": "/r_and_m/index.html",
     "static/media/search.svg": "/r_and_m/static/media/search.77cfd6eef4ae63307cd8f1813909ed96.svg",
     "static/media/back.svg": "/r_and_m/static/media/back.58acb58c0d6bedac27e8921bfdcfc28a.svg",
-    "main.d33a9b70.css.map": "/r_and_m/static/css/main.d33a9b70.css.map",
-    "main.142008ef.js.map": "/r_and_m/static/js/main.142008ef.js.map"
+    "main.3fbce675.css.map": "/r_and_m/static/css/main.3fbce675.css.map",
+    "main.dccd71d2.js.map": "/r_and_m/static/js/main.dccd71d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.d33a9b70.css",
-    "static/js/main.142008ef.js"
+    "static/css/main.3fbce675.css",
+    "static/js/main.dccd71d2.js"
   ]
 }
