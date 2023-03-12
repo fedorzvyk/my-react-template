@@ -7,8 +7,8 @@ axios.defaults.baseURL = 'https://rickandmortyapi.com/api';
 //   return data;
 // }
 
-export async function searchCharacter(query) {
-  const { data } = await axios.get(`/character/?name=${query}`);
+export async function searchCharacter({ page, query }) {
+  const { data } = await axios.get(`/character/?name=${query}&page=${page}`);
   return data;
 }
 

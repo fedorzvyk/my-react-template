@@ -14,14 +14,14 @@ export const LoginWithGoogle = () => {
   const handleClick = () => {
     signInWithPopup(auth, googleAuthProvider)
       .then(credentials => {
-        setUser(credentials.user.email);
-        localStorage.setItem('email', credentials.user.email);
+        setUser(credentials.user);
+        localStorage.setItem('user', JSON.stringify(credentials.user));
       })
       .catch(e => console.log(e));
   };
 
   useEffect(() => {
-    setUser(localStorage.getItem('email'));
+    setUser(localStorage.getItem('user'));
   }, []);
 
   return (

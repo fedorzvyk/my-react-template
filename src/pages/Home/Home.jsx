@@ -23,53 +23,57 @@ const Home = () => {
   const [status, setStatus] = useState(STATUS.idle);
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const page = searchParams.get('page') ?? 1;
   const searchQuery = searchParams.get('search') ?? '';
 
   const [search, setSearch] = useState(searchQuery);
 
-  useEffect(() => {
-    const fetchData = async params => {
-      setStatus(STATUS.loading);
-      try {
-        const data = await searchCharacter(params);
-        const count = data.info.count;
-        if (count && params !== '') {
-          toast.info(`We found ${count} characters`);
-        }
+  const fetchData = async params => {
+    setStatus(STATUS.loading);
+    try {
+      // console.log(params);
+      const data = await searchCharacter(params);
 
-        data.results.sort((a, b) => {
-          if (a.name > b.name) {
-            return 1;
-          }
-          if (a.name < b.name) {
-            return -1;
-          }
-          return 0;
-        });
-        setCharacters(data.results);
-        setStatus(STATUS.success);
-      } catch (error) {
-        console.log(error.message);
-        setCharacters(null);
-        setStatus(STATUS.error);
-        toast.error('Bad request. Try to find another character');
+      const count = data.info.count;
+      if (count && params.query !== '') {
+        toast.info(`We found ${count} characters`);
       }
-    };
 
-    fetchData(searchQuery);
-  }, [searchQuery]);
-
-  const searchPosts = useMemo(() => {
-    return debounce(search => {
-      // setSearchParams({ page: 1, search });
-      setSearchParams(search !== '' ? { search } : {});
-    }, 500);
-  }, [setSearchParams]);
+      data.results.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      });
+      setCharacters(data.results);
+      setStatus(STATUS.success);
+    } catch (error) {
+      console.log(error.message);
+      setCharacters(null);
+      setStatus(STATUS.error);
+      toast.error('Bad request. Try to find another character');
+    }
+  };
 
   const handleSearch = event => {
     setSearch(event.target.value);
     searchPosts(event.target.value);
   };
+
+  const searchPosts = useMemo(() => {
+    return debounce(search => {
+      // const searchParam = search !== '' ? { search } : {};
+      setSearchParams(search !== '' ? { page: 1, search } : {});
+      // setSearchParams(search !== '' ? { search } : {});
+    }, 500);
+  }, [setSearchParams]);
+
+  useEffect(() => {
+    fetchData({ page, query: searchQuery });
+  }, [page, searchQuery]);
 
   return (
     <>
