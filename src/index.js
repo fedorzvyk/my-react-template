@@ -9,7 +9,7 @@ import { LoginWithGoogle } from 'components/LoginWithGoogle/LoginWithGoogle';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/r_and_m">
+    <BrowserRouter basename="/rick_and_morty">
       {/* <App /> */}
       <LoginWithGoogle />
     </BrowserRouter>

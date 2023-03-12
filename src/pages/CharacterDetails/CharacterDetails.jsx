@@ -15,12 +15,6 @@ export const MovieDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   getCharacterById(id).then(data => {
-  //     return setCharacter(data);
-  //   });
-  // }, [id]);
-
   useEffect(() => {
     setIsLoading(true);
 

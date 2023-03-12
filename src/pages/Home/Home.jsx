@@ -10,6 +10,7 @@ import Filter from 'components/Filter/Filter';
 import { Loading } from 'components/Loading/Loading';
 import { NotFound } from 'components/NotFound/NotFound';
 import { Hero } from 'components/Hero/Hero';
+import { Pagination } from 'components/Pagination/Pagination';
 
 const STATUS = {
   idle: 'idle',
@@ -20,6 +21,7 @@ const STATUS = {
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
+  const [searcInfo, setSearcInfo] = useState('');
   const [status, setStatus] = useState(STATUS.idle);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -32,8 +34,10 @@ const Home = () => {
     setStatus(STATUS.loading);
     try {
       const data = await searchCharacter(params);
+      // console.log(data);
       const count = data.info.count;
-      if (count && params.query !== '') {
+      setSearcInfo(data.info);
+      if (count && params.query !== '' && +params.page === 1) {
         toast.info(`We found ${count} characters`);
       }
 
@@ -64,9 +68,33 @@ const Home = () => {
   const searchCharactersParams = useMemo(() => {
     return debounce(search => {
       setSearchParams(search !== '' ? { page: 1, search } : {});
-      // setSearchParams(search !== '' ? { search } : {});
     }, 500);
   }, [setSearchParams]);
+
+  const loadMore = () => {
+    let currentPage = +page + 1;
+    setSearchParams(
+      search !== '' ? { page: currentPage, search } : { page: currentPage }
+    );
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+  const loadLess = () => {
+    let currentPage = +page - 1;
+    setSearchParams(
+      search !== '' ? { page: currentPage, search } : { page: currentPage }
+    );
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleHeroClick = () => {
+    setSearch('');
+  };
 
   useEffect(() => {
     fetchData({ page, query: searchQuery });
@@ -74,12 +102,19 @@ const Home = () => {
 
   return (
     <>
-      <Hero />
+      <Hero handleHeroClick={handleHeroClick} />
       <Filter onFilter={handleSearch} filter={search} />
+
       {(status === STATUS.loading || status === STATUS.idle) && <Loading />}
 
       {status === STATUS.error && <NotFound />}
       {characters && <CharactersList characters={characters} />}
+      <Pagination
+        searcInfo={searcInfo}
+        loadLess={loadLess}
+        loadMore={loadMore}
+        page={page}
+      />
     </>
   );
 };

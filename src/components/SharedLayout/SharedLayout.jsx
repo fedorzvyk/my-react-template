@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.scss';
 import { ToastContainer } from 'react-toastify';
@@ -9,11 +8,9 @@ export const SharedLayout = () => {
     <>
       <div className={css.container}>
         <Header />
-        <Suspense fallback={null}>
-          <Outlet />
-        </Suspense>
+        <Outlet />
       </div>
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </>
   );
 };

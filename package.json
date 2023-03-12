@@ -1,8 +1,8 @@
 {
-  "name": "r_and_m",
+  "name": "rick_and_morty",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fedorzvyk.github.io/r_and_m/",
+  "homepage": "https://fedorzvyk.github.io/rick_and_morty/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -13,7 +13,7 @@
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-infinite-scroll-component": "^6.1.0",
+    "react-icons": "^4.8.0",
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
