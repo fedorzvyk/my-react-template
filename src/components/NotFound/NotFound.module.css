@@ -9,11 +9,13 @@
   text-align: center;
 }
 
-.notfoud__image {
-  @media (max-width: 799px) {
+@media (max-width: 799px) {
+  .notfoud__image {
     width: 500px;
   }
-  @media (max-width: 540px) {
+}
+@media (max-width: 540px) {
+  .notfoud__image {
     width: 312px;
   }
-}
+}/*# sourceMappingURL=NotFound.module.css.map */

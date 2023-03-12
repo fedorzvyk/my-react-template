@@ -31,9 +31,7 @@ const Home = () => {
   const fetchData = async params => {
     setStatus(STATUS.loading);
     try {
-      // console.log(params);
       const data = await searchCharacter(params);
-
       const count = data.info.count;
       if (count && params.query !== '') {
         toast.info(`We found ${count} characters`);
@@ -60,12 +58,11 @@ const Home = () => {
 
   const handleSearch = event => {
     setSearch(event.target.value);
-    searchPosts(event.target.value);
+    searchCharactersParams(event.target.value);
   };
 
-  const searchPosts = useMemo(() => {
+  const searchCharactersParams = useMemo(() => {
     return debounce(search => {
-      // const searchParam = search !== '' ? { search } : {};
       setSearchParams(search !== '' ? { page: 1, search } : {});
       // setSearchParams(search !== '' ? { search } : {});
     }, 500);

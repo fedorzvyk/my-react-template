@@ -14,7 +14,7 @@ export const Header = () => {
   };
   return (
     <div className={scss.header__wrapper}>
-      <h2>Welcome, {user.displayName}</h2>
+      <h2 className={scss.header__title}>Welcome, {user.displayName}</h2>
       <button onClick={logout}>Logout</button>
     </div>
   );

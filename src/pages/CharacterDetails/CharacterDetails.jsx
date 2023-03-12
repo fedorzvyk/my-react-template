@@ -37,14 +37,14 @@ export const MovieDetails = () => {
   };
 
   return (
-    <div className={css.container__details}>
+    <>
       <button className={css.button} onClick={handleGoBack}>
         <Back /> Go back
       </button>
       {isLoading && <Loading />}
 
       {character && (
-        <div className={css.character__container}>
+        <div className={css.character__wrapper}>
           <img
             className={css.character__image}
             src={`${character.image}`}
@@ -54,28 +54,30 @@ export const MovieDetails = () => {
           <h2 className={css.character__subtitle}>Informations</h2>
           <ul className={css.character__list}>
             <li className={css.character__item}>
-              <h3>Gender</h3>
-              <p>{character.gender}</p>
+              <h3 className={css.character__key}>Gender</h3>
+              <p className={css.character__value}>{character.gender}</p>
             </li>
             <li className={css.character__item}>
-              <h3>Status</h3>
-              <p>{character.status}</p>
+              <h3 className={css.character__key}>Status</h3>
+              <p className={css.character__value}>{character.status}</p>
             </li>
             <li className={css.character__item}>
-              <h3>Specie</h3>
-              <p>{character.species}</p>
+              <h3 className={css.character__key}>Specie</h3>
+              <p className={css.character__value}>{character.species}</p>
             </li>
             <li className={css.character__item}>
-              <h3>Origin</h3>
-              <p>{character.origin.name}</p>
+              <h3 className={css.character__key}>Origin</h3>
+              <p className={css.character__value}>{character.origin.name}</p>
             </li>
             <li className={css.character__item}>
-              <h3>Type</h3>
-              <p>{character.type || `Underfind`}</p>
+              <h3 className={css.character__key}>Type</h3>
+              <p className={css.character__value}>
+                {character.type || `Underfind`}
+              </p>
             </li>
           </ul>
         </div>
       )}
-    </div>
+    </>
   );
 };

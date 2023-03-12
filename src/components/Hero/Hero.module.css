@@ -3,7 +3,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: 86px;
-  @media (max-width: 540px) {
+}
+@media (max-width: 540px) {
+  .input__wrapper {
     padding-top: 40px;
   }
 }
@@ -11,10 +13,14 @@
 .hero__image {
   width: 600px;
   margin-bottom: 16px;
-  @media (max-width: 799px) {
+}
+@media (max-width: 799px) {
+  .hero__image {
     width: 400px;
   }
-  @media (max-width: 540px) {
+}
+@media (max-width: 540px) {
+  .hero__image {
     width: 312px;
   }
-}
+}/*# sourceMappingURL=Hero.module.css.map */
