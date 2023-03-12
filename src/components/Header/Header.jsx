@@ -9,7 +9,7 @@ export const Header = () => {
   }, []);
 
   const logout = () => {
-    localStorage.clear('userR&M');
+    localStorage.removeItem('userR&M');
     window.location.reload();
   };
   return (
