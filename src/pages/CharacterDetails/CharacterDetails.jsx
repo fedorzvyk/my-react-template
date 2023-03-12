@@ -3,23 +3,37 @@ import { getCharacterById } from 'api/api';
 import { useEffect, useState } from 'react';
 import { ReactComponent as Back } from '../../images/back.svg';
 
-import css from './CharacterDetails.module.css';
+import css from './CharacterDetails.module.scss';
+import { toast } from 'react-toastify';
+import { Loading } from 'components/Loading/Loading';
 
 export const MovieDetails = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [character, setCharacter] = useState();
   const { id } = useParams();
 
   const location = useLocation();
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   getCharacterById(id).then(data => {
+  //     return setCharacter(data);
+  //   });
+  // }, [id]);
+
   useEffect(() => {
-    getCharacterById(id).then(data => {
-      return setCharacter(data);
-    });
+    setIsLoading(true);
+
+    getCharacterById(id)
+      .then(data => setCharacter(data))
+      .catch(() => {
+        toast.error('Something went wrong!');
+      })
+      .finally(() => setIsLoading(false));
   }, [id]);
 
   const handleGoBack = () => {
-    navigate(location.state?.from || '/movies');
+    navigate(location.state?.from || '/');
   };
 
   return (
@@ -27,6 +41,8 @@ export const MovieDetails = () => {
       <button className={css.button} onClick={handleGoBack}>
         <Back /> Go back
       </button>
+      {isLoading && <Loading />}
+
       {character && (
         <div className={css.character__container}>
           <img

@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 86px;
 }
 
-.input__image {
-  width: 600px;
-  margin-bottom: 16px;
+.input__field {
+  display: flex;
+  position: relative;
+  margin-bottom: 61px;
+  width: 100%;
+  max-width: 1020px;
 }
 
 .input {
@@ -25,13 +27,6 @@
   padding-left: 48px;
 
   color: rgba(0, 0, 0, 0.5);
-}
-
-.input__field {
-  position: relative;
-  margin-bottom: 61px;
-  max-width: 1020px;
-  width: 100%;
 }
 
 .input__icon {

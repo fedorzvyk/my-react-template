@@ -7,9 +7,20 @@ import debounce from 'lodash/debounce';
 import { useSearchParams } from 'react-router-dom';
 import { searchCharacter } from 'api/api';
 import Filter from 'components/Filter/Filter';
+import { Loading } from 'components/Loading/Loading';
+import { NotFound } from 'components/NotFound/NotFound';
+import { Hero } from 'components/Hero/Hero';
+
+const STATUS = {
+  idle: 'idle',
+  loading: 'loading',
+  success: 'success',
+  error: 'error',
+};
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
+  const [status, setStatus] = useState(STATUS.idle);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('search') ?? '';
@@ -18,10 +29,15 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async params => {
-      // setStatus(STATUS.loading);
+      setStatus(STATUS.loading);
       try {
-        const { results } = await searchCharacter(params);
-        results.sort((a, b) => {
+        const data = await searchCharacter(params);
+        const count = data.info.count;
+        if (count && params !== '') {
+          toast.info(`We found ${count} characters`);
+        }
+
+        data.results.sort((a, b) => {
           if (a.name > b.name) {
             return 1;
           }
@@ -30,12 +46,12 @@ const Home = () => {
           }
           return 0;
         });
-        setCharacters(results);
-        // setStatus(STATUS.success);
+        setCharacters(data.results);
+        setStatus(STATUS.success);
       } catch (error) {
         console.log(error.message);
         setCharacters(null);
-        // setStatus(STATUS.error);
+        setStatus(STATUS.error);
         toast.error('Bad request. Try to find another character');
       }
     };
@@ -56,10 +72,14 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <>
+      <Hero />
       <Filter onFilter={handleSearch} filter={search} />
+      {(status === STATUS.loading || status === STATUS.idle) && <Loading />}
+
+      {status === STATUS.error && <NotFound />}
       {characters && <CharactersList characters={characters} />}
-    </div>
+    </>
   );
 };
 
