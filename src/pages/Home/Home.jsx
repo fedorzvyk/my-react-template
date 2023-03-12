@@ -109,12 +109,14 @@ const Home = () => {
 
       {status === STATUS.error && <NotFound />}
       {characters && <CharactersList characters={characters} />}
-      <Pagination
-        searcInfo={searcInfo}
-        loadLess={loadLess}
-        loadMore={loadMore}
-        page={page}
-      />
+      {status !== STATUS.error && (
+        <Pagination
+          searcInfo={searcInfo}
+          loadLess={loadLess}
+          loadMore={loadMore}
+          page={page}
+        />
+      )}
     </>
   );
 };
