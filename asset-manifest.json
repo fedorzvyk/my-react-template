@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/rick_and_morty/static/css/main.84385764.css",
-    "main.js": "/rick_and_morty/static/js/main.d34bdcf9.js",
-    "static/css/314.54f7ea88.chunk.css": "/rick_and_morty/static/css/314.54f7ea88.chunk.css",
+    "main.css": "/rick_and_morty/static/css/main.f9b50662.css",
+    "main.js": "/rick_and_morty/static/js/main.37957fcb.js",
+    "static/css/314.294e845b.chunk.css": "/rick_and_morty/static/css/314.294e845b.chunk.css",
     "static/js/314.1b7a43cf.chunk.js": "/rick_and_morty/static/js/314.1b7a43cf.chunk.js",
     "static/css/532.a24ad306.chunk.css": "/rick_and_morty/static/css/532.a24ad306.chunk.css",
     "static/js/532.e7457db8.chunk.js": "/rick_and_morty/static/js/532.e7457db8.chunk.js",
@@ -19,9 +19,9 @@
     "index.html": "/rick_and_morty/index.html",
     "static/media/search.svg": "/rick_and_morty/static/media/search.77cfd6eef4ae63307cd8f1813909ed96.svg",
     "static/media/back.svg": "/rick_and_morty/static/media/back.58acb58c0d6bedac27e8921bfdcfc28a.svg",
-    "main.84385764.css.map": "/rick_and_morty/static/css/main.84385764.css.map",
-    "main.d34bdcf9.js.map": "/rick_and_morty/static/js/main.d34bdcf9.js.map",
-    "314.54f7ea88.chunk.css.map": "/rick_and_morty/static/css/314.54f7ea88.chunk.css.map",
+    "main.f9b50662.css.map": "/rick_and_morty/static/css/main.f9b50662.css.map",
+    "main.37957fcb.js.map": "/rick_and_morty/static/js/main.37957fcb.js.map",
+    "314.294e845b.chunk.css.map": "/rick_and_morty/static/css/314.294e845b.chunk.css.map",
     "314.1b7a43cf.chunk.js.map": "/rick_and_morty/static/js/314.1b7a43cf.chunk.js.map",
     "532.a24ad306.chunk.css.map": "/rick_and_morty/static/css/532.a24ad306.chunk.css.map",
     "532.e7457db8.chunk.js.map": "/rick_and_morty/static/js/532.e7457db8.chunk.js.map",
@@ -29,7 +29,7 @@
     "559.59dedfb3.chunk.js.map": "/rick_and_morty/static/js/559.59dedfb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84385764.css",
-    "static/js/main.d34bdcf9.js"
+    "static/css/main.f9b50662.css",
+    "static/js/main.37957fcb.js"
   ]
 }
