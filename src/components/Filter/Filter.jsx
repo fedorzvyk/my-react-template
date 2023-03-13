@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Filter.module.scss';
 import { ReactComponent as Search } from '../../images/search.svg';
 
@@ -19,3 +20,8 @@ const Filter = ({ filter, onFilter }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  filter: PropTypes.string,
+  onFilter: PropTypes.func,
+};

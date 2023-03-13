@@ -71,7 +71,7 @@ const Home = () => {
     }, 500);
   }, [setSearchParams]);
 
-  const loadMore = () => {
+  const loadNextPage = () => {
     let currentPage = +page + 1;
     setSearchParams(
       search !== '' ? { page: currentPage, search } : { page: currentPage }
@@ -81,7 +81,7 @@ const Home = () => {
       behavior: 'smooth',
     });
   };
-  const loadLess = () => {
+  const loadPrevPage = () => {
     let currentPage = +page - 1;
     setSearchParams(
       search !== '' ? { page: currentPage, search } : { page: currentPage }
@@ -112,8 +112,8 @@ const Home = () => {
       {status !== STATUS.error && (
         <Pagination
           searcInfo={searcInfo}
-          loadLess={loadLess}
-          loadMore={loadMore}
+          loadNextPage={loadNextPage}
+          loadPrevPage={loadPrevPage}
           page={page}
         />
       )}
