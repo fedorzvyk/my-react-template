@@ -66,7 +66,7 @@ const CharacterDetails = () => {
             <li className={css.character__item}>
               <h3 className={css.character__key}>Type</h3>
               <p className={css.character__value}>
-                {character.type || `Underfind`}
+                {character.type || `Unknown`}
               </p>
             </li>
           </ul>
