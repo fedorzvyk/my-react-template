@@ -5,7 +5,7 @@ import scss from './LoginWithGoogle.module.scss';
 import { FcGoogle } from 'react-icons/fc';
 import App from '../App';
 import { Hero } from 'components/Hero/Hero';
-import animation from '../../images/rick-and-morty-breaking-bad.gif';
+import animation from '../../images/rick&morty_animation.webp';
 
 export const LoginWithGoogle = () => {
   const auth = getAuth(app);

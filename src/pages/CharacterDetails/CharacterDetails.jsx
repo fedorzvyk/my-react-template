@@ -7,7 +7,7 @@ import css from './CharacterDetails.module.scss';
 import { toast } from 'react-toastify';
 import { Loading } from 'components/Loading/Loading';
 
-export const MovieDetails = () => {
+const CharacterDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [character, setCharacter] = useState();
   const { id } = useParams();
@@ -75,3 +75,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default CharacterDetails;

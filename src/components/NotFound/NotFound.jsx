@@ -1,4 +1,4 @@
-import notFound from '../../images/not_found.png';
+import notFound from '../../images/not_found.webp';
 import scss from './NotFound.module.scss';
 
 export const NotFound = () => {

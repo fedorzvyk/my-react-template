@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo_desktop.png';
+import logo from '../../images/logo.webp';
 import scss from './Hero.module.scss';
 
 export const Hero = handleHeroClick => {

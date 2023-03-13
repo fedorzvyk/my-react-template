@@ -43,11 +43,9 @@
   @media (max-width: 540px) {
     width: 312px;
   }
-}
-
-.characters__item:hover {
-  transform: scale(1.035);
-  /* box-shadow: 2px 2px 3px 3px rgb(255 107 8 / 50%); */
+  &:hover {
+    transform: scale(1.035);
+  }
 }
 
 .character__wrap {
